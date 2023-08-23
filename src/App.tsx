@@ -2,9 +2,10 @@ import { useState } from "react";
 import "./App.scss";
 import { Beer } from "./Types/Types";
 import { useEffect } from "react";
-import BeerList from "./Components/BeerList/BeerCardList";
 import NavBar from "./Components/NavBar/NavBar";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./Containers/Home/Home";
+import FilterPage from "./Containers/FilterPage/FilterPage";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -22,9 +23,12 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div>
+      <div className="app">
         <NavBar />
-        <BeerList beerlist={beers} />
+        <Routes>
+          <Route path="/" element={<Home beerlist={beers} />} />
+          <Route path="/filter" element={<FilterPage beerlist={beers} />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

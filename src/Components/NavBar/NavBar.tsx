@@ -14,6 +14,7 @@ const NavBar = () => {
       <button className="navbar__button" onClick={toggleNav}>
         Menu
       </button>
+      <h1 className="navbar__header">Beer Belly</h1>
       {showNav && <NavMenu onClose={toggleNav} />}
     </nav>
   );
