@@ -3,6 +3,8 @@ import "./App.scss";
 import { Beer } from "./Types/Types";
 import { useEffect } from "react";
 import BeerList from "./Components/BeerList/BeerCardList";
+import NavBar from "./Components/NavBar/NavBar";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -19,9 +21,12 @@ function App() {
   }, []);
 
   return (
-    <>
-      <BeerList beerlist={beers} />
-    </>
+    <BrowserRouter>
+      <div>
+        <NavBar />
+        <BeerList beerlist={beers} />
+      </div>
+    </BrowserRouter>
   );
 }
 
