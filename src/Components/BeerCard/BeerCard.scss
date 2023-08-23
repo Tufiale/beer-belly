@@ -1,0 +1,13 @@
+.beer-card-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px black solid;
+  width: auto;
+  font-family: monospace;
+}
+
+.beer-card__image {
+  width: auto;
+  height: 150px;
+}
