@@ -10,19 +10,21 @@ type BeerListProps = {
 const BeerList = ({ beerlist }: BeerListProps) => {
   return (
     <>
-      {beerlist.map((beer) => (
-        <Link to={`/beer/${beer.id}`}>
-          <BeerCard
-            key={beer.id}
-            name={beer.name}
-            tagline={beer.tagline}
-            image={beer.image_url}
-            abv={beer.abv}
-            ibu={beer.ibu}
-            description={beer.description}
-          />
-        </Link>
-      ))}
+      <section className="beerlist-container">
+        {beerlist.map((beer) => (
+          <Link to={`/beer/${beer.id}`}>
+            <BeerCard
+              key={beer.id}
+              name={beer.name}
+              tagline={beer.tagline}
+              image={beer.image_url}
+              abv={beer.abv}
+              ibu={beer.ibu}
+              description={beer.description}
+            />
+          </Link>
+        ))}
+      </section>
     </>
   );
 };

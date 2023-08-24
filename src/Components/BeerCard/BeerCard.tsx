@@ -19,7 +19,7 @@ const BeerCard = ({
 }: beerCardProps) => {
   return (
     <>
-      <section>
+      <section className="beer-card">
         <div className="beer-card-container">
           <div className="beer-card__heading">
             <img className="beer-card__image" src={image} alt={name} />

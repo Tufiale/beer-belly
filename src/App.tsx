@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Containers/Home/Home";
 import FilterPage from "./Containers/FilterPage/FilterPage";
 import { ChangeEvent } from "react";
+import BeerProfile from "./Components/BeerProfile/BeerProfile";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -45,6 +46,7 @@ function App() {
               />
             }
           />
+          <Route path="/beer/:beerId" element={<BeerProfile beers={beers} />} />
         </Routes>
       </div>
     </BrowserRouter>
