@@ -4,7 +4,6 @@ import { Beer } from "./Types/Types";
 import { useEffect } from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Containers/Home/Home";
 import FilterPage from "./Containers/FilterPage/FilterPage";
 import { ChangeEvent } from "react";
 import BeerProfile from "./Components/BeerProfile/BeerProfile";
@@ -34,9 +33,8 @@ function App() {
       <div className="app">
         <NavBar />
         <Routes>
-          <Route path="/" element={<Home beerlist={beers} />} />
           <Route
-            path="/filter"
+            path="/"
             element={
               <FilterPage
                 handleChange={handleRadioList}
