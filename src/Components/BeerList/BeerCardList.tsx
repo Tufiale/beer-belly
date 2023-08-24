@@ -1,6 +1,7 @@
 import "../BeerList/BeerCardList.scss";
 import { Beer } from "../../Types/Types";
 import BeerCard from "../BeerCard/BeerCard";
+import { Link } from "react-router-dom";
 
 type BeerListProps = {
   beerlist: Beer[];
@@ -10,15 +11,17 @@ const BeerList = ({ beerlist }: BeerListProps) => {
   return (
     <>
       {beerlist.map((beer) => (
-        <BeerCard
-          key={beer.id}
-          name={beer.name}
-          tagline={beer.tagline}
-          image={beer.image_url}
-          abv={beer.abv}
-          ibu={beer.ibu}
-          description={beer.description}
-        />
+        <Link to={`/beer/${beer.id}`}>
+          <BeerCard
+            key={beer.id}
+            name={beer.name}
+            tagline={beer.tagline}
+            image={beer.image_url}
+            abv={beer.abv}
+            ibu={beer.ibu}
+            description={beer.description}
+          />
+        </Link>
       ))}
     </>
   );

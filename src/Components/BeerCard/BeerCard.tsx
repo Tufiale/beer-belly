@@ -29,6 +29,7 @@ const BeerCard = ({
           <h4 className="beer-card__description">{description}</h4>
           <h4 className="beer-card__abv">ABV:{abv}</h4>
           <h4 className="beer-card__ibu">IBU:{ibu}</h4>
+          <h3>Click here for more information</h3>
         </div>
       </div>
     </>
