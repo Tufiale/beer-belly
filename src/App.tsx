@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FilterPage from "./Containers/FilterPage/FilterPage";
 import { ChangeEvent } from "react";
 import BeerProfile from "./Components/BeerProfile/BeerProfile";
+import Header from "./Components/Header/Header";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
@@ -32,6 +33,7 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <NavBar />
+        <Header />
         <Routes>
           <Route
             path="/"
