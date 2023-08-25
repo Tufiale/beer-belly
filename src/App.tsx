@@ -3,7 +3,7 @@ import "./App.scss";
 import { Beer } from "./Types/Types";
 import { useEffect } from "react";
 import NavBar from "./Components/NavBar/NavBar";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import FilterPage from "./Containers/FilterPage/FilterPage";
 import BeerProfile from "./Components/BeerProfile/BeerProfile";
 import Header from "./Components/Header/Header";
@@ -23,16 +23,14 @@ function App() {
   }, []);
 
   return (
-    <HashRouter>
-      <div className="app">
-        <NavBar />
-        <Header />
-        <Routes>
-          <Route path="/" element={<FilterPage beerlist={beers} />} />
-          <Route path="/beer/:beerId" element={<BeerProfile beers={beers} />} />
-        </Routes>
-      </div>
-    </HashRouter>
+    <div className="app">
+      <NavBar />
+      <Header />
+      <Routes>
+        <Route path="/" element={<FilterPage beerlist={beers} />} />
+        <Route path="/beer/:beerId" element={<BeerProfile beers={beers} />} />
+      </Routes>
+    </div>
   );
 }
 
