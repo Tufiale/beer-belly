@@ -5,13 +5,11 @@ import { useEffect } from "react";
 import NavBar from "./Components/NavBar/NavBar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FilterPage from "./Containers/FilterPage/FilterPage";
-import { ChangeEvent } from "react";
 import BeerProfile from "./Components/BeerProfile/BeerProfile";
 import Header from "./Components/Header/Header";
 
 function App() {
   const [beers, setBeers] = useState<Beer[]>([]);
-  const [filter, setFilter] = useState({ radioSelect: "All" });
 
   const gettingBeers = async () => {
     const url = "https://api.punkapi.com/v2/beers";
@@ -24,28 +22,13 @@ function App() {
     gettingBeers();
   }, []);
 
-  const handleRadioList = (event: ChangeEvent<HTMLInputElement>) => {
-    const userSelection = event.currentTarget.value;
-    setFilter({ ...filter, radioSelect: userSelection });
-  };
-
   return (
     <BrowserRouter>
       <div className="app">
         <NavBar />
         <Header />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <FilterPage
-                handleChange={handleRadioList}
-                selected={filter.radioSelect}
-                options={["All", "ABV over 3.0", "IBU over 5.0"]}
-                beerlist={beers}
-              />
-            }
-          />
+          <Route path="/" element={<FilterPage beerlist={beers} />} />
           <Route path="/beer/:beerId" element={<BeerProfile beers={beers} />} />
         </Routes>
       </div>

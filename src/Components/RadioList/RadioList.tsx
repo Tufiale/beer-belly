@@ -15,31 +15,21 @@ const RadioList = ({
   label,
 }: RadioButtonProps) => {
   return (
-    <div className="radio-buttons">
-      <h2>{label}</h2>
-      {options.map((option, index) => {
-        const optionLower = option.toLowerCase();
-        const optionCapitalized =
-          optionLower[0].toUpperCase() + optionLower.slice(1);
-        return (
-          <div key={"radio-button" + option + index}>
-            <div className="radio-button__options">
-              <input
-                type="radio"
-                name="radio-filter"
-                id={optionLower}
-                value={optionLower}
-                checked={optionLower === selected.toLowerCase()}
-                onChange={onChange}
-              />
-
-              <label className="radio-buttons__label" htmlFor={optionLower}>
-                {optionCapitalized}
-              </label>
-            </div>
-          </div>
-        );
-      })}
+    <div className="radio-button">
+      <p>{label}</p>
+      {options.map((option) => (
+        <>
+          <label>{option}</label>
+          <input
+            type="radio"
+            name="radio-list"
+            id="radio-list"
+            onChange={onChange}
+            checked={selected === option}
+            value={option}
+          />
+        </>
+      ))}
     </div>
   );
 };
