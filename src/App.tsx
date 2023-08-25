@@ -3,7 +3,7 @@ import "./App.scss";
 import { Beer } from "./Types/Types";
 import { useEffect } from "react";
 import NavBar from "./Components/NavBar/NavBar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import FilterPage from "./Containers/FilterPage/FilterPage";
 import BeerProfile from "./Components/BeerProfile/BeerProfile";
 import Header from "./Components/Header/Header";
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <NavBar />
         <Header />
@@ -32,7 +32,7 @@ function App() {
           <Route path="/beer/:beerId" element={<BeerProfile beers={beers} />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
