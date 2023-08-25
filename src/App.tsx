@@ -28,10 +28,7 @@ function App() {
         <NavBar />
         <Header />
         <Routes>
-          <Route
-            path="/beer-belly/"
-            element={<FilterPage beerlist={beers} />}
-          />
+          <Route path="/" element={<FilterPage beerlist={beers} />} />
           <Route path="/beer/:beerId" element={<BeerProfile beers={beers} />} />
         </Routes>
       </div>
