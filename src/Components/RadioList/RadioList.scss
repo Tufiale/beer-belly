@@ -1,0 +1,20 @@
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh;
+}
+
+.radio-buttons__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh;
+}
+.radio-buttons__options {
+  margin: 0 10px;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #9ca8bd;
+  border-radius: 5px;
+}

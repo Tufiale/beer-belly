@@ -23,17 +23,20 @@ const RadioList = ({
           optionLower[0].toUpperCase() + optionLower.slice(1);
         return (
           <div key={"radio-button" + option + index}>
-            <input
-              type="radio"
-              name="radio-filter"
-              id={optionLower}
-              value={optionLower}
-              checked={optionLower === selected.toLowerCase()}
-              onChange={onChange}
-            />
-            <label className="radio-buttons__label" htmlFor={optionLower}>
-              {optionCapitalized}
-            </label>
+            <div className="radio-button__options">
+              <input
+                type="radio"
+                name="radio-filter"
+                id={optionLower}
+                value={optionLower}
+                checked={optionLower === selected.toLowerCase()}
+                onChange={onChange}
+              />
+
+              <label className="radio-buttons__label" htmlFor={optionLower}>
+                {optionCapitalized}
+              </label>
+            </div>
           </div>
         );
       })}

@@ -1,0 +1,29 @@
+.beer-profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+.beer-profile-info {
+  margin: 10vh auto;
+  width: 50%;
+  background-color: #fff;
+  border: 1px solid #9ca8bd;
+  border-radius: 20px;
+  padding: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  grid-gap: 20px;
+  gap: 20px;
+}
+
+.beer-profile__image {
+  width: 40%;
+  object-fit: contain;
+  grid-row: 1/-1;
+}

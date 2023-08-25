@@ -1,0 +1,14 @@
+.search-box {
+  background-color: #ffd369;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.search-box__input {
+  width: 70%;
+  border-radius: 5px;
+  padding: 10px;
+}

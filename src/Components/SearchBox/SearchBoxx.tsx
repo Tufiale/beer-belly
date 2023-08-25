@@ -18,6 +18,7 @@ const SearchBox = ({ label, searchTerm, handleInput }: SearchBoxProps) => {
         value={searchTerm}
         onInput={handleInput}
         className="search-box__input"
+        placeholder="Search your beers here..."
       />
     </div>
   );

@@ -9,14 +9,7 @@ type beerCardProps = {
   description: string;
 };
 
-const BeerCard = ({
-  name,
-  tagline,
-  image,
-  abv,
-  ibu,
-  description,
-}: beerCardProps) => {
+const BeerCard = ({ name, tagline, image, abv, ibu }: beerCardProps) => {
   return (
     <>
       <section className="beer-card">
@@ -27,9 +20,9 @@ const BeerCard = ({
             <h3 className="beer-card__tagline">{tagline}</h3>
           </div>
           <div className="beer-card__main">
-            <h4 className="beer-card__description">{description}</h4>
             <h4 className="beer-card__abv">ABV:{abv}</h4>
             <h4 className="beer-card__ibu">IBU:{ibu}</h4>
+            <br />
             <h3>Click here for more information</h3>
           </div>
         </div>

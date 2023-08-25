@@ -1,14 +1,23 @@
 * {
   text-decoration: none;
+  font-family: monospace;
 }
 
 .beer-card-container {
-  display: flex;
-  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #9ca8bd;
+  border-radius: 20px;
+  padding: 20px 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  grid-gap: 10px;
+  gap: 10px;
+  max-height: 380px;
   text-align: center;
-  border: 2px black solid;
-  width: 150px;
-  font-family: monospace;
+  color: #222831;
 }
 
 .beer-card__image {

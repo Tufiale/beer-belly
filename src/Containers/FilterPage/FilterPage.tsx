@@ -3,7 +3,6 @@ import SearchBox from "../../Components/SearchBox/SearchBoxx";
 import BeerList from "../../Components/BeerList/BeerCardList";
 import { Beer } from "../../Types/Types";
 import { useState, FormEvent, ChangeEventHandler } from "react";
-import RadioList from "../../Components/RadioList/RadioList";
 
 type FilterPageProps = {
   beerlist: Beer[];
@@ -14,10 +13,10 @@ type FilterPageProps = {
 
 const FilterPage = ({
   beerlist,
-  handleChange,
-  selected,
-  options,
-}: FilterPageProps) => {
+}: // handleChange,
+// selected,
+// options,
+FilterPageProps) => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const handleInput = (event: FormEvent<HTMLInputElement>) => {
@@ -39,12 +38,12 @@ const FilterPage = ({
         searchTerm={searchTerm}
       />
 
-      <RadioList
-        label="Let's see what we can find..."
+      {/* <RadioList
+        label="What you looking for... "
         selected={selected}
         onChange={handleChange}
         options={options}
-      />
+      /> */}
 
       <BeerList beerlist={filteredBeers} />
     </>
